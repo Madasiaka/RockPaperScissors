@@ -31,22 +31,31 @@ const server = http.createServer((req, res) => {
   }
   else if (page == '/api') {
     if('userChoice' in params){
-      if(params['userChoice']== 'rock' || 'paper' || 'scissors'){
+      if(params['userChoice'] == 'rock' || 'paper' || 'scissors'){
         res.writeHead(200, {'Content-Type': 'application/json'});
-        const choice = Math.ceil(Math.random()*3)
+
         let userChoice = params['userChoice']
-        //let chance = Math.ceil(Math.random() * 3)
-    //let flipRes = chance <=  1 ? "paper" : chance <= 2 ? 'scissors : 'rock' ;
-        let botChoice = choice === 1 ? "rock" : choice === 2 ? "paper" : "scissors";
-        const objToJson = {
-          botOutcome: botChoice
+        let botChoice
+        let winner
+
+        let num = Math.ceil(Math.random()*3) //Random number calculation to set the botChoice
+
+        num <= 1 ? botChoice = 'rock' : num <= 2 ? botChoice = 'paper' : botChoice = 'scissors' //Assigns the bot's choice based on the random number calculation above 
+        
+        userChoice == botChoice ? winner = 'NOBODY': (userChoice == 'rock' && botChoice == 'paper') || (userChoice == 'paper' && botChoice == 'scissors') || (userChoice == 'scissors' && botChoice == 'rock') ? winner = botChoice : winner = userChoice
+            //This will produce the winner and assign winner the value of either usersChoice, botsChoice, or 'NOBODY'
+
+        let returnObj = { //This object will be JSON stringified and then sent to the main.js for intepretation
+          winner: winner,
+          userChoice: userChoice,
+          botChoice: botChoice
         }
-        res.end(JSON.stringify(objToJson));
-      }//student = leon
+        res.end(JSON.stringify(returnObj)) //Object stringified and sent as JSON back to main.js
+      }
        else if(params['userChoice'] != 'rock' || 'paper' || 'scissors'){
          res.writeHead(200, {'Content-Type': 'application/json'});
          const objToJson = {
-           botOutcome: 'unknown'
+           botChoice: 'unknown' //ah ok
          }
          res.end(JSON.stringify(objToJson));
       }//student != leon
@@ -109,29 +118,41 @@ server.listen(8000);
 //}
 //rockPaperScissorsCheck("rock");
 
-let userChoice = 
-let botChoice = Math.ceil(Math.random()*3)
-let num = Math.ceil(Math.random()*3)
-let winner = ''
-let loser1 = ''
-let loser2 = ''
-userChoice == botChoice ? winner = 'NOBODY': (userChoice == 'rock' && botChoice == 'paper') || (userChoice == 'paper' && botChoice == 'scissors') || (userChoice == 'scissors' && botChoice == 'rock') ? winner = botChoice : winner = userChoice
 
 
-if(winner == 'rock'){
-  loser1 = 'paper';
-  loser2 = 'scissors'
-}
-else if(winner == 'paper'){
-  loser1 = 'rock'
-  loser2 = 'scissors'
-}
-else{
-  loser1 = 'rock'
-  loser2 = 'paper'
-}
-let returnObj = {
-  winner: true,
-  loser1: false,
-  loser2: false
-}
+
+
+
+//const choice = Math.ceil(Math.random()*3)
+//        let userChoice = params['userChoice']
+//        //let chance = Math.ceil(Math.random() * 3)
+//    //let flipRes = chance <=  1 ? "paper" : chance <= 2 ? 'scissors : 'rock' ;
+//        let botChoice = choice === 1 ? "rock" : choice === 2 ? "paper" : "scissors";
+//        let winOutcome = () => {
+//          if (botChoice === userChoice) {
+//            return "tie game";
+//          } else if (
+//            (botChoice == "rock" && userChoice == "scissors") ||
+//            (botChoice == "scissors" && userChoice == "paper") ||
+//            (botChoice == "paper" && userChoice == "rock")
+//          ) {
+//            return "you lose";
+//          } else if (
+//            (botChoice == "rock" && userChoice == "paper") ||
+//            (botChoice == "paper" && userChoice == "scissors") ||
+//            (botChoice == "scissors" && userChoice == "rock")
+//          ) {
+//            return "you win";
+//          }
+//        }
+//        }
+//        const objToJson = {
+//          botOutcome: botChoice,
+//          gameOutcome: winOutcome 
+//        }
+//        res.end(JSON.stringify(objToJson));
+
+if(winner) {
+  document.querySelector('h2').innerText = link
+}else do
+document.querySelector(link).toggle

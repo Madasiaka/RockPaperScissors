@@ -23,7 +23,16 @@ img#win{
   width: 400px;
 }
 
+img {
+  height: 300px;
+}
+
 .imgoverall {
   display: flex;
   justify-content: space-between;
+}
+
+.hidden {
+  display: block;
+  visibility: none;
 }
