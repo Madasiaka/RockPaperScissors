@@ -16,18 +16,14 @@ img#win {
   align-content: center;
   align-items: center;
 }
-
-.homepage {
-  width: 400px;
-}
-
 img {
-  height: 300px;
+  max-height: 60vh;
 }
 
 .imgoverall {
   display: flex;
   justify-content: space-between;
+  margin-top: 30vh;
 }
 
 .hidden {
