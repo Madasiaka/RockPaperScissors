@@ -1,15 +1,12 @@
-h1{
+h1 {
   color: firebrick;
   text-align: center;
 }
-body{
-  background: url(https://www.niemanlab.org/images/project-thunderdome-cc.jpg) no-repeat;
-  background-size: cover;
-}
-img#lose{
+
+img#lose {
   width: 400px;
 }
-img#win{
+img#win {
   width: 400px;
 }
 
