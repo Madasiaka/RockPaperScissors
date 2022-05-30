@@ -1,5 +1,6 @@
-h1 {
-  color: firebrick;
+h1,
+h2 {
+  color: #dfd3c3;
   text-align: center;
 }
 
@@ -32,5 +33,11 @@ img {
 }
 
 body {
-  background: radial-gradient(rgb(77, 177, 77), #3f87a6);;
+  background: radial-gradient(
+    1091px at 106.5% 111.5%,
+    rgb(250, 246, 213) 0.1%,
+    rgb(218, 147, 93) 42.2%,
+    rgb(137, 86, 67) 74.3%,
+    rgb(67, 39, 39) 100.2%
+  );
 }
