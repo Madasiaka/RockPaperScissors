@@ -30,3 +30,7 @@ img {
   display: block;
   visibility: none;
 }
+
+body {
+  background: radial-gradient(rgb(77, 177, 77), #3f87a6);;
+}
