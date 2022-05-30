@@ -42,3 +42,17 @@ body {
     rgb(67, 39, 39) 100.2%
   );
 }
+
+.returnHome {
+  border-radius: 5px;
+  margin: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #c7b198;
+  background: #596e79;
+}
+
+.returnHome:hover {
+  background: #c7b198;
+  color: #596e79;
+}
