@@ -152,7 +152,7 @@ server.listen(8000);
 //        }
 //        res.end(JSON.stringify(objToJson));
 
-if(winner) {
-  document.querySelector('h2').innerText = link
-}else do
-document.querySelector(link).toggle
+// if(winner) {
+//   document.querySelector('h2').innerText = link
+// }else do
+// document.querySelector(link).toggle

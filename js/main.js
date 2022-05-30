@@ -1,13 +1,14 @@
 let choice = Array.from(document.querySelectorAll('.clickListener'))
 choice.forEach(el => el.addEventListener('click', async (e) =>{
-    e.target.id 
+    console.log(e.target.id)
   const userChoice = e.target.id //IDK if this will work
   const res = await fetch(`/api?userChoice=${userChoice}`)
   const data = await res.json()
 
   console.log(data);
   
-  data.winner == userChoice ? document.querySelector("#winner").innerText = 'You Win!!' : data.winner == data.botChoice ? document.querySelector("#winner").innerText = 'You Lose!' : document.querySelector("#winner").innerText = 'Nobody Wins!'
+  data.winner == userChoice ? /*document.querySelector("#winner").innerText = 'You Win!!'*/ window.location.href = "/winpage.html" : data.winner == data.botChoice ? document.querySelector("#winner").innerText = 'You Lose!' : document.querySelector("#winner").innerText = 'Nobody Wins!'
+  
   
   
   //document.querySelector("#winner").textContent = data.winOutcome
@@ -15,8 +16,6 @@ choice.forEach(el => el.addEventListener('click', async (e) =>{
   
 }))
 
-if ()
-document.querySelector("#lost")
 
 
 
