@@ -7,19 +7,5 @@ choice.forEach(el => el.addEventListener('click', async (e) =>{
 
   console.log(data);
   
-  data.winner == userChoice ? /*document.querySelector("#winner").innerText = 'You Win!!'*/ window.location.href = "winpage.html" : data.winner == data.botChoice ? /*document.querySelector("#winner").innerText = 'You Lose!'*/ window.location.href = "losepage.html": document.querySelector("#winner").innerText = 'Nobody Wins!'
-  
-  
-  
-  //document.querySelector("#winner").textContent = data.winOutcome
-  //document.querySelector("#botOutcome").textContent = data.botOutcome
-  
+  data.winner == userChoice ? window.location.href = "winpage.html" : data.winner == data.botChoice ? window.location.href = "losepage.html": document.querySelector("#winner").innerText = 'Nobody Wins!'
 }))
-
-
-
-
-
-
-//let flipRes = Math.ceil(Math.random() * 2) === 1 ? "heads" : "tails";
-//let flipRes = Math.ceil(Math.random() * 3) <=  1 ? "paper" : "tails";
