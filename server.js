@@ -15,14 +15,14 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/winpage') {
+  else if (page == '/winpage.html') {
     fs.readFile('winpage.html', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
       res.end();
     });
   }
-  else if (page == '/losepage') {
+  else if (page == '/losepage.html') {
     fs.readFile('losepage.html', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
@@ -86,73 +86,3 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000);
-
-
-//function rockPaperScissors() {
-//  let random = Math.random();
-//  if (random < 0.33) {
-//    return "rock";
-//  } else if (random < 0.66) {
-//    return "paper";
-//  } else {
-//    return "scissors";
-//  }
-//}
-
-//let botChoice = rockPaperScissors();
-//  if (botChoice === playerChoice) {
-//    console.log("tie game");
-//  } else if (
-//    (botChoice == "rock" && playerChoice == "scissors") ||
-//    (botChoice == "scissors" && playerChoice == "paper") ||
-//    (botChoice == "paper" && playerChoice == "rock")
-//  ) {
-//    console.log("you lose");
-//  } else if (
-//    (botChoice == "rock" && playerChoice == "paper") ||
-//    (botChoice == "paper" && playerChoice == "scissors") ||
-//    (botChoice == "scissors" && playerChoice == "rock")
-//  ) {
-//    console.log("you win");
-//  }
-//}
-//rockPaperScissorsCheck("rock");
-
-
-
-
-
-
-//const choice = Math.ceil(Math.random()*3)
-//        let userChoice = params['userChoice']
-//        //let chance = Math.ceil(Math.random() * 3)
-//    //let flipRes = chance <=  1 ? "paper" : chance <= 2 ? 'scissors : 'rock' ;
-//        let botChoice = choice === 1 ? "rock" : choice === 2 ? "paper" : "scissors";
-//        let winOutcome = () => {
-//          if (botChoice === userChoice) {
-//            return "tie game";
-//          } else if (
-//            (botChoice == "rock" && userChoice == "scissors") ||
-//            (botChoice == "scissors" && userChoice == "paper") ||
-//            (botChoice == "paper" && userChoice == "rock")
-//          ) {
-//            return "you lose";
-//          } else if (
-//            (botChoice == "rock" && userChoice == "paper") ||
-//            (botChoice == "paper" && userChoice == "scissors") ||
-//            (botChoice == "scissors" && userChoice == "rock")
-//          ) {
-//            return "you win";
-//          }
-//        }
-//        }
-//        const objToJson = {
-//          botOutcome: botChoice,
-//          gameOutcome: winOutcome 
-//        }
-//        res.end(JSON.stringify(objToJson));
-
-// if(winner) {
-//   document.querySelector('h2').innerText = link
-// }else do
-// document.querySelector(link).toggle

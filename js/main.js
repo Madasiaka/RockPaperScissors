@@ -7,7 +7,7 @@ choice.forEach(el => el.addEventListener('click', async (e) =>{
 
   console.log(data);
   
-  data.winner == userChoice ? /*document.querySelector("#winner").innerText = 'You Win!!'*/ window.location.href = "/winpage.html" : data.winner == data.botChoice ? document.querySelector("#winner").innerText = 'You Lose!' : document.querySelector("#winner").innerText = 'Nobody Wins!'
+  data.winner == userChoice ? /*document.querySelector("#winner").innerText = 'You Win!!'*/ window.location.href = "winpage.html" : data.winner == data.botChoice ? /*document.querySelector("#winner").innerText = 'You Lose!'*/ window.location.href = "losepage.html": document.querySelector("#winner").innerText = 'Nobody Wins!'
   
   
   
